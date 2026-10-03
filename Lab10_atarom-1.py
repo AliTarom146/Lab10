@@ -4,7 +4,7 @@ Author: Ali Tarom
 Purpose: This program reads a text file and counts the frequency
 of each word using object-oriented programming.
 Starter Code: No starter code was used.
-Date: October, 2026
+Date: October 2, 2026
 """
 
 import pathlib
@@ -47,3 +47,10 @@ class WordAnalyzer:
         except FileNotFoundError:
             print(f"File not found: {self.__filepath}")
             return False
+
+    def print_report(self):
+        """Print the word frequencies in alphabetical order."""
+        sorted_words = sorted(self.__frequencies.keys())
+
+        for word in sorted_words:
+            print(f"{word:<10} :: {self.__frequencies[word]}")
